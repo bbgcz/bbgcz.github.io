@@ -118,8 +118,10 @@
 		        var dataYMD = dataCur.getFullYear() + '-' + (dataCur.getMonth() + 1) + '-' + (dataCur.getDate());
 			var dataStart = dataYMD - ' 01:23';
 			var dataEnd = dataYMD+' 05:20';
-			$('#start_time').val(dataStart);
-			$('#end_time').val(dataEnd);
+			var startTime = document.getElementById('start_time');
+			var endTime = document.getElementById('end_time');
+			startTime.valueAsDate = dataStart;
+			endTime.valueAsDate = dataEnd;
 		}
 	</script>
 
