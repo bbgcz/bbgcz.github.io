@@ -116,6 +116,8 @@
 		window.onload = function setTime() {
 			var dataCur = new Date();
 		        var SecCur = dataCur.getMilliseconds();
+			console.log(SecCur);
+			console.log(type(SecCur));
 			var dataStart = SecCur - ‪4428000‬;
 			var dataEnd = SecCur + ‪18000000‬;
 			var startTime = document.getElementById('start_time');
