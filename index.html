@@ -72,14 +72,14 @@
 				
 				<p data-v-558d2c74="" class="dx-form_body-box-label"><span data-v-558d2c74="" class="dx-form_body-box-label_required" style="color: red;">*</span>
 						<!----><span data-v-558d2c74="" class="dx-form_body-box-label_text">开始时间</span></p>
-				<input type="time" name="start-time" required>
+				<input type="time" id="start_time" name="start-time" required>
 				<br />
 				<br />
 	
 	
 				<p data-v-558d2c74="" class="dx-form_body-box-label"><span data-v-558d2c74="" class="dx-form_body-box-label_required" style="color: red;">*</span>
 						<!----><span data-v-558d2c74="" class="dx-form_body-box-label_text">结束时间</span></p>
-				<input type="time" name="end-time" required>
+				<input type="time" id="end_time" name="end-time" required>
 				<br />
 				<br />
 	
@@ -112,6 +112,14 @@
 		function change2() {
 			$("#zhuanye").val($("#sex2").val());
 
+		}
+		function setTime() {
+			var dataCur = new Date();
+		        var dataYMD = dataCur.getFullYear() + '-' + (dataCur.getMonth() + 1) + '-' + (dataCur.getDate());
+			var dataStart = dataYMD - ' 01:23';
+			var dataEnd = dataYMD+' 05:20';
+			$('#start_time').val(dataStart);
+			$('#end_time').val(dataEnd);
 		}
 	</script>
 
