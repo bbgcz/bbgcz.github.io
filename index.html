@@ -20,7 +20,7 @@
 					<p data-v-558d2c74="" class="dx-form_body-box-label"><span data-v-558d2c74="" class="dx-form_body-box-label_required" style="color: red;">*</span>
 						<!----><span data-v-558d2c74="" class="dx-form_body-box-label_text">姓名</span></p>
 					<div data-v-920aa3bc="" data-v-558d2c74="" class="dx-input">
-						<input data-v-920aa3bc=""  type="text" placeholder="请输入您的姓名" clear="true" class="dx-input-field" name="name" required>
+						<input data-v-920aa3bc=""  type="text" placeholder="请输入您的姓名" v-model="范同" clear="true" class="dx-input-field" name="name" required>
 						<!---->
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 					<p data-v-558d2c74="" class="dx-form_body-box-label"><span data-v-558d2c74="" class="dx-form_body-box-label_required" style="color: red;">*</span>
 						<!----><span data-v-558d2c74="" class="dx-form_body-box-label_text">学号</span></p>
 					<div data-v-920aa3bc="" data-v-558d2c74="" class="dx-input">
-						<input data-v-920aa3bc=""  type="text" placeholder="请输入您的学号" clear="true" class="dx-input-field" name="xuehao" required>
+						<input data-v-920aa3bc=""  type="text" placeholder="请输入您的学号" v-model="2020010232" clear="true" class="dx-input-field" name="xuehao" required>
 						<!---->
 					</div>
 				</div>
@@ -86,13 +86,13 @@
 	
 				<p data-v-558d2c74="" class="dx-form_body-box-label"><span data-v-558d2c74="" class="dx-form_body-box-label_required" style="color: red;">*</span>
 						<!----><span data-v-558d2c74="" class="dx-form_body-box-label_text">理由</span></p>
-				<input data-v-920aa3bc=""  type="text" placeholder="请输入理由" clear="true" class="dx-input-field" name="liyou" required>
+				<input data-v-920aa3bc=""  type="text" placeholder="请输入理由" v-model="看病" clear="true" class="dx-input-field" name="liyou" required>
 				<br />
 	
 		
 				<p data-v-558d2c74="" class="dx-form_body-box-label"><span data-v-558d2c74="" class="dx-form_body-box-label_required" style="color: red;">*</span>
 						<!----><span data-v-558d2c74="" class="dx-form_body-box-label_text">去向</span></p>
-				<input data-v-920aa3bc=""  type="text" placeholder="请输入去向" clear="true" class="dx-input-field" name="quxiang" required>
+				<input data-v-920aa3bc=""  type="text" placeholder="请输入去向" v-model="七星区" clear="true" class="dx-input-field" name="quxiang" required>
 				<br />
 				
 				<input type="submit" value="提交" class="dx-btn dx-btn_primary" style="font-size: 50px;" />
@@ -113,17 +113,16 @@
 			$("#zhuanye").val($("#sex2").val());
 
 		}
-		window.onload = function setTime() {
-			var dataCur = new Date();
-		        var SecCur = dataCur.getMilliseconds();
-			console.log(SecCur);
-			console.log(type(SecCur));
-			var dataStart = SecCur - ‪4428000‬;
-			var dataEnd = SecCur + ‪18000000‬;
+		window.onload = function init_time() {
+			var dateCur = new Date();
 			var startTime = document.getElementById('start_time');
 			var endTime = document.getElementById('end_time');
-			var date1 = new Date(dataStart);
-			var date2 = new Date(dataEnd);
+			var str1 = dateCur.setDate(dateCur.getHours() - 1).toLocaleString();
+			var str2 = dateCur.setDate(dateCur.getHours() + 5).toLocaleString();
+			console.log(str1);
+			console.log(str2);
+			var date1 = new Date(str1);
+			var date2 = new Date(str2);
 			startTime.valueAsDate = date1;
 			endTime.valueAsDate = date2;
 			console.log('aaa');
