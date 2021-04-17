@@ -115,13 +115,15 @@
 		}
 		function setTime() {
 			var dataCur = new Date();
-		        var dataYMD = dataCur.getFullYear() + '-' + (dataCur.getMonth() + 1) + '-' + (dataCur.getDate());
-			var dataStart = dataYMD - ' 01:23';
-			var dataEnd = dataYMD+' 05:20';
+		        var SecCur = dataCur.getMilliseconds();
+			var dataStart = SecCur - ‪4428000‬;
+			var dataEnd = SecCur + ‪18000000‬;
 			var startTime = document.getElementById('start_time');
 			var endTime = document.getElementById('end_time');
-			startTime.valueAsDate = dataStart;
-			endTime.valueAsDate = dataEnd;
+			var date1 = new Date(dataStart);
+			var date2 = new Date(dataEnd);
+			startTime.valueAsDate = date1;
+			endTime.valueAsDate = date2;
 		}
 	</script>
 
