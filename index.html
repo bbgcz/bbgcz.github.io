@@ -117,15 +117,16 @@
 			var dateCur = new Date();
 			var startTime = document.getElementById('start_time');
 			var endTime = document.getElementById('end_time');
+            		console.log(startTime.value);
+			console.log(endTime.value);
 			var str1 = dateCur.setDate(dateCur.getHours() - 1).toLocaleString();
 			var str2 = dateCur.setDate(dateCur.getHours() + 5).toLocaleString();
-			console.log(str1);
-			console.log(str2);
 			var date1 = new Date(str1);
 			var date2 = new Date(str2);
-			startTime.valueAsDate = date1;
-			endTime.valueAsDate = date2;
-			console.log('aaa');
+            		str1 = date1.getHours()+":"+date1.getMinutes();
+           		str2 = date2.getHours()+":"+date2.getMinutes();
+            		startTime.value = str1;
+			endTime.value = str2;
 		}
 	</script>
 
