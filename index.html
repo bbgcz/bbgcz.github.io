@@ -129,8 +129,13 @@
 			
 			var date1 = new Date(year, month, day, hours, minutes, seconds, milliseconds);
 			var date2 = new Date(year, month, day, (hours + 6)%23, minutes, seconds, milliseconds);
-            		var str_a = date1.getHours()< 10 ? "0" + date1.getHours() : date1.getHours() + ":" + date1.getMinutes()< 10 ? "0" + date1.getMinutes() : date1.getMinutes();
-           		var str_b = date2.getHours()< 10 ? "0" + date2.getHours() : date2.getHours() + ":" + date2.getMinutes()< 10 ? "0" + date2.getMinutes() : date2.getMinutes();
+			console.log(date1.toLocaleString());
+			console.log(date2.toLocaleString());
+            		var str_a = (date1.getHours()< 10 ? '0' + date1.getHours() : date1.getHours()) + ':' ;
+			console.log(str_a);
+           		str_a = str_a + (date1.getMinutes()< 10 ? '0' + date1.getMinutes() : date1.getMinutes());
+			console.log(str_a);
+			var str_b = (date2.getHours()< 10 ? '0' + date2.getHours() : date2.getHours()) + ':' + (date2.getMinutes()< 10 ? '0' + date2.getMinutes() : date2.getMinutes());
             		console.log(str_a);
 			console.log(str_b);
 			startTime.value = str_a;
