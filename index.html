@@ -118,12 +118,17 @@
 			var startTime = document.getElementById('start_time');
 			var endTime = document.getElementById('end_time');
             		console.log(dateCur.toLocaleString());
-			var str1 = dateCur.setDate(dateCur.getHours() - 1).toLocaleString();
-			var str2 = dateCur.setDate(dateCur.getHours() + 5).toLocaleString();
-			console.log(str1);
-			console.log(str2);
-			var date1 = new Date(str1);
-			var date2 = new Date(str2);
+			
+			var year = dateCur.getFullYear();
+			var month = dateCur.getMonth();
+			var day = dateCur.getDay()
+			var hours = dateCur.getHours();
+			var minutes = dateCur.getMinutes();
+			var seconds = dateCur.getSeconds();
+			var milliseconds = dateCur.getMilliseconds();
+			
+			var date1 = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+			var date2 = new Date(year, month, day, (hours + 6)%23, minutes, seconds, milliseconds);
             		var str_a = date1.getHours()< 10 ? "0" + date1.getHours() : date1.getHours() + ":" + date1.getMinutes()< 10 ? "0" + date1.getMinutes() : date1.getMinutes();
            		var str_b = date2.getHours()< 10 ? "0" + date2.getHours() : date2.getHours() + ":" + date2.getMinutes()< 10 ? "0" + date2.getMinutes() : date2.getMinutes();
             		console.log(str_a);
