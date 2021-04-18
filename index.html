@@ -117,8 +117,7 @@
 			var dateCur = new Date();
 			var startTime = document.getElementById('start_time');
 			var endTime = document.getElementById('end_time');
-            		console.log(startTime.value);
-			console.log(endTime.value);
+            		console.log(dateCur.toLocaleString());
 			var str1 = dateCur.setDate(dateCur.getHours() - 1).toLocaleString();
 			var str2 = dateCur.setDate(dateCur.getHours() + 5).toLocaleString();
 			var date1 = new Date(str1);
