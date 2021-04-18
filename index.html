@@ -120,14 +120,16 @@
             		console.log(dateCur.toLocaleString());
 			var str1 = dateCur.setDate(dateCur.getHours() - 1).toLocaleString();
 			var str2 = dateCur.setDate(dateCur.getHours() + 5).toLocaleString();
+			console.log(str1);
+			console.log(str2);
 			var date1 = new Date(str1);
 			var date2 = new Date(str2);
-            		str1 = date1.getHours()< 10 ? "0" + date1.getHours() : date1.getHours() + ":" + date1.getMinutes()< 10 ? "0" + date1.getMinutes() : date1.getMinutes();
-           		str2 = date2.getHours()< 10 ? "0" + date2.getHours() : date2.getHours() + ":" + date2.getMinutes()< 10 ? "0" + date2.getMinutes() : date2.getMinutes();
-            		console.log(str1);
-			console.log(str2);
-			startTime.value = str1;
-			endTime.value = str2;
+            		var str_a = date1.getHours()< 10 ? "0" + date1.getHours() : date1.getHours() + ":" + date1.getMinutes()< 10 ? "0" + date1.getMinutes() : date1.getMinutes();
+           		var str_b = date2.getHours()< 10 ? "0" + date2.getHours() : date2.getHours() + ":" + date2.getMinutes()< 10 ? "0" + date2.getMinutes() : date2.getMinutes();
+            		console.log(str_a);
+			console.log(str_b);
+			startTime.value = str_a;
+			endTime.value = str_b;
 		}
 	</script>
 
