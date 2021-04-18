@@ -124,7 +124,9 @@
 			var date2 = new Date(str2);
             		str1 = date1.getHours()< 10 ? "0" + date1.getHours() : date1.getHours() + ":" + date1.getMinutes()< 10 ? "0" + date1.getMinutes() : date1.getMinutes();
            		str2 = date2.getHours()< 10 ? "0" + date2.getHours() : date2.getHours() + ":" + date2.getMinutes()< 10 ? "0" + date2.getMinutes() : date2.getMinutes();
-            		startTime.value = str1;
+            		console.log(str1);
+			console.log(str2);
+			startTime.value = str1;
 			endTime.value = str2;
 		}
 	</script>
